@@ -181,7 +181,7 @@
   <table id="TAB47" populated="true" UUID="72e628fe-54eb-4f5d-969e-00934e7c3d95" name="Stock" objectType="TABLE" physicalName="Stock" >
    <remarks></remarks>
    <folder id="FOLTAB471" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL48" populated="true" UUID="d25e6e21-237f-4d98-839f-8a074ff41e4e" autoIncrement="false" autoIncrementSequenceName="Stock_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL48" populated="true" UUID="d25e6e21-237f-4d98-839f-8a074ff41e4e" autoIncrement="true" autoIncrementSequenceName="Stock_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL49" populated="true" UUID="5c00c52f-833d-4a47-8284-39c40462c080" autoIncrement="false" autoIncrementSequenceName="Stock_quantite_seq" defaultValue="" name="quantite_kg" nullable="0" physicalName="quantite_kg" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="6" userDefinedTypeUUID="7e55bcd0-7606-4153-b749-9c397f12c4d8" >

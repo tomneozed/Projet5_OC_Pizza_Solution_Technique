@@ -53,8 +53,28 @@ VALUES
 	('Fenouil', 'epice')
 ;
 
+INSERT INTO public.point_de_vente
+	(horaires)
+VALUES
+	('Mardi au Samedi de 12h-22h'),
+	('Mardi au Samedi de 12h-22h'),
+	('Mardi au Samedi de 12h-22h'),
+	('Mardi au Samedi de 12h-22h'),
+	('Mardi au Samedi de 12h-22h')
+;
+
+INSERT INTO public.adresse_pdv
+	(point_de_vente_id, numero_rue, code_postal, ville)
+VALUES
+	(1, '18 rue des fleurs', 31000, 'Toulouse'),
+	(2, '23 rue du pissenlit', 75000, 'Paris'),
+	(3, '44 boulevard de la violette', 64000, 'Pau'),
+	(4, '55bis avenue coquelicot', 69000, 'Lyon'),
+	(5, '77 route de la tulipe', 13000, 'Marseille')
+;
+
 INSERT INTO public.stock
-	(point_de_vente_id, ingredient_nom, quantite_kg, prix_kg, date_achat, date_peremption)
+	(point_de_vente_id, ingredient_nom, quantite_kg, prix_au_kilo, date_achat, date_peremption)
 VALUES
 	(1, 'Sauce tomate', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(1, 'Creme fraiche', 10, 1.5, '29/03/2018', '29/05/2018'),
@@ -83,7 +103,7 @@ VALUES
 	(1, 'Curry', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(1, 'Curcuma', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(1, 'Fenouil', 10, 1.5, '29/03/2018', '29/05/2018'),
-
+-------------------------------------------------------------------------------
 	(2, 'Sauce tomate', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(2, 'Creme fraiche', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(2, 'Sauce blanche', 10, 1.5, '29/03/2018', '29/05/2018'),
@@ -111,7 +131,7 @@ VALUES
 	(2, 'Curry', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(2, 'Curcuma', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(2, 'Fenouil', 10, 1.5, '29/03/2018', '29/05/2018'),
-
+-------------------------------------------------------------------------------
 	(3, 'Sauce tomate', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(3, 'Creme fraiche', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(3, 'Sauce blanche', 10, 1.5, '29/03/2018', '29/05/2018'),
@@ -139,7 +159,7 @@ VALUES
 	(3, 'Curry', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(3, 'Curcuma', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(3, 'Fenouil', 10, 1.5, '29/03/2018', '29/05/2018'),
-
+-------------------------------------------------------------------------------
 	(4, 'Sauce tomate', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(4, 'Creme fraiche', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(4, 'Sauce blanche', 10, 1.5, '29/03/2018', '29/05/2018'),
@@ -167,7 +187,7 @@ VALUES
 	(4, 'Curry', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(4, 'Curcuma', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(4, 'Fenouil', 10, 1.5, '29/03/2018', '29/05/2018'),
-
+-------------------------------------------------------------------------------
 	(5, 'Sauce tomate', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(5, 'Creme fraiche', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(5, 'Sauce blanche', 10, 1.5, '29/03/2018', '29/05/2018'),
@@ -195,7 +215,6 @@ VALUES
 	(5, 'Curry', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(5, 'Curcuma', 10, 1.5, '29/03/2018', '29/05/2018'),
 	(5, 'Fenouil', 10, 1.5, '29/03/2018', '29/05/2018')
-
 ;
 
 
@@ -279,28 +298,6 @@ VALUES
 	('Auvergnate', 'Fromage emmental')
 ;
 
-INSERT INTO public.point_de_vente
-	(horaires)
-VALUES
-	('18 rue des fleurs', 'Mardi au Samedi de 12h-22h'),
-	('23 rue du pissenlit', 'Mardi au Samedi de 12h-22h'),
-	('44 boulevard de la violette', 'Mardi au Samedi de 12h-22h'),
-	('55bis avenue coquelicot', 'Mardi au Samedi de 12h-22h'),
-	('77 route de la tulipe', 'Mardi au Samedi de 12h-22h')
-;
-
-INSERT INTO public.adresse_pdv
-	(point_de_vente_id, numero_rue, code_postal, ville)
-VALUES
-	(1, '18 rue des fleurs', 31000, 'Toulouse'),
-	(2, '23 rue du pissenlit', 75000, 'Paris'),
-	(3, '44 boulevard de la violette', 64000, 'Pau'),
-	(4, '55bis avenue coquelicot', 69000, 'Lyon'),
-	(5, '77 route de la tulipe', 13000, 'Marseille')
-;
-
-
-
 INSERT INTO public.carte
 	(pizza_nom, point_de_vente_id)
 VALUES
@@ -359,10 +356,92 @@ VALUES
 	('Auvergnate', 5)
 ;
 
+INSERT INTO public.client
+	(id, prenom, nom, sexe, numero_tel, adresse_mail)
+VALUES
+	(1, 'Alain', 'Terrieur', 'M', '0607080910', 'AlainTerrieur@gmail.com'),
+	(2, 'Alex', 'Terrieur', 'M', '0607080911', 'AlexTerrieur@gmail.com'),
+	(3, 'Georges', 'Washington', 'M', '0600121314', 'GeorgesWashington@gmail.com'),
+	(4, 'Marie', 'Curry', 'F', '0607087910', 'MarieCurry@gmail.com'),
+	(5, 'Josephine', 'Langegardien', 'F', '0607980910', 'JoséphineLangegardien@gmail.com'),
+	(6, 'Marilyn', 'Monroe', 'F', '0607330910', 'MarilynMonroe@gmail.com'),
+	(7, 'Gaston', 'Lagaffe', 'M','0707080450', 'GastonLagaffe@spirou.com'),
+	(8, 'Shtroumpf', 'Farceur', 'M', '0607890910', 'ShtroumpfFarceur@sapareille.com'),
+	(9, 'Gunter', 'Pauli', 'M', '0607770910', 'GunterPauli@BlueEconomy.com'),
+	(10, 'Madame', 'Columbo', 'F','0601088510', 'MadameColumbo@tvBreitz.com')
+;
 
+INSERT INTO public.adresse_client
+	(client_id, numero_rue, code_postal, ville)
+VALUES
+	(1, '3 rue de la connaissance', 31100, 'Toulouse'),
+	(2, '3 rue de la connaissance', 31100, 'Toulouse'),
+	(3, '23 rue du cerveau', 64120, 'Pau'),
+	(4, '89 avenue du temps', 64050, 'Pau'),
+	(5, '16 boulevard du biomimétisme', 69960, 'Lyon'),
+	(6, '55 avenue du shitake', 69330, 'Lyon'),
+	(7, '37 boulevard du nouveau', 13780, 'Marseille'),
+	(8, '0 rue de la multiplication', 13310, 'Marseille'),
+	(9, '15 avenue Babylone', 75630, 'Paris'),
+	(10, '29 boulevard musique de barry white' , 75560, 'Paris')
+;
 
+INSERT INTO public.employe
+	(id, point_de_vente_id, poste, prenom, nom, sexe, numero_tel, adresse_mail)
+VALUES
+	(101, 1, 'pizzaiolo','Stephen', 'Hawking', 'M', '0607080785', 'StephenHawking@gmail.com'),
+	(102, 1, 'livreur','Wallace', 'Chan', 'M', '0607087851', 'WallaceChan@gmail.com'),
+	(103, 2, 'pizzaiolo','Chimp', 'Anze', 'M', '0611121314', 'GeorgesWashington@gmail.com'),
+	(104, 2, 'livreur','Elizabeth', 'Adams', 'F', '0604187910', 'ElizabethAdams@gmail.com'),
+	(105, 3, 'pizzaiolo','Elizabeth', 'Blackwell', 'F', '0675980910', 'ElizabethBlackwell@gmail.com'),
+	(106, 3, 'livreur','Madeleine', 'Bres', 'F', '0607000910', 'MadeleineBres@gmail.com'),
+	(107, 4, 'pizzaiolo','Linus', 'Torvald', 'M','0707080789', 'LinusTorvald@linux.com'),
+	(108, 4, 'livreur','Paul', 'Bigot', 'M', '0607888910', 'PaulBigot@gmail.com'),
+	(109, 5, 'pizzaiolo','Pierre', 'Bardin', 'M', '0608570910', 'PierreBardin@gmail.com'),
+	(110, 5, 'livreur','Katherine', 'Johnson', 'F','0689088510', 'KaterineJohnson@gmail.com')
+;
 
+INSERT INTO public.commande
+	(point_de_vente_id, client_id, date_livraison, moyen_paiement, livreur_id)
+VALUES
+	(1, 1, '23/03/2018 19:15', 'Liquide', 102),
+	(1, 2, '27/03/2018 20:00', 'En ligne', 102),
+	(2, 3, '30/03/2018 19:00', 'En ligne', 104),
+	(2, 4, '15/02/2018 19:45', 'Liquide', 104),
+	(3, 5, '24/01/2018 18:45', 'En ligne', 106),
+	(3, 6, '07/02/2018 20:15', 'En ligne', 106),
+	(4, 7, '16/01/2018 21:15', 'Liquide', 108),
+	(4, 8, '09/02/2018 21:30', 'Liquide', 108),
+	(5, 9, '28/02/2018 20:15', 'En ligne', 110),
+	(5, 10, '26/03/2018 19:45', 'Liquide', 110)
+;
 
+INSERT INTO public.pizza_dans_commande
+	(point_de_vente_id, commande_id, pizza_nom)
+VALUES
+	(1, 1, 'Marguerita'),
+	(1, 1, 'Marguerita'),
+	(1, 1, 'Campagnarde'),
+	(1, 2, 'Regina'),
+	(1, 2, 'Chorizo'),
+	(2, 3, 'Orientale'),
+	(2, 4, 'Royale'),
+	(2, 4, 'Basquaise'),
+	(3, 5, 'Basquaise'),
+	(3, 5, 'Kebab'),
+	(3, 5, 'Auvergnate'),
+	(3, 6, '4 Saisons'),
+	(3, 6, '3 Fromages'),
+	(3, 6, 'Marguerita'),
+	(4, 7, 'Campagnarde'),
+	(4, 7, 'Regina'),
+	(4, 8, 'Chorizo'),
+	(5, 9, 'Royale'),
+	(5, 9, 'Basquaise'),
+	(5, 9, 'Auvergnate'),
+	(5, 10, '3 Fromages'),
+	(5, 10, 'Kebab')
+;
 
 
 
