@@ -13,7 +13,7 @@
   <table id="TAB1" populated="true" UUID="f0765285-77d0-4ade-86ee-f4897b38533e" name="Employe" objectType="TABLE" physicalName="Employe" >
    <remarks></remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL2" populated="true" UUID="3a60636d-0820-48dd-9abe-593d8db63063" autoIncrement="false" autoIncrementSequenceName="Employe_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL2" populated="true" UUID="3a60636d-0820-48dd-9abe-593d8db63063" autoIncrement="true" autoIncrementSequenceName="Employe_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL3" populated="true" UUID="0994db17-bed2-4522-b9fc-849423f2ef25" autoIncrement="false" autoIncrementSequenceName="Employe_nom_seq" defaultValue="" name="nom" nullable="0" physicalName="nom" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -25,7 +25,7 @@
     <column id="COL5" populated="true" UUID="a59a52c3-e33b-4ba9-a455-b5ae48f53396" autoIncrement="false" autoIncrementSequenceName="Employe_sexe_seq" defaultValue="D" name="sexe" nullable="0" physicalName="sexe" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL6" populated="true" UUID="d0b3dfdf-5e22-4197-8f41-73299d1ec757" autoIncrement="false" autoIncrementSequenceName="Employe_numero_tel_seq" defaultValue="" name="numero_tel" nullable="0" physicalName="numero_tel" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL6" populated="true" UUID="d0b3dfdf-5e22-4197-8f41-73299d1ec757" autoIncrement="false" autoIncrementSequenceName="Employe_numero_tel_seq" defaultValue="" name="numero_tel" nullable="0" physicalName="numero_tel" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL7" populated="true" UUID="e17d7d75-84b7-487a-985d-afef56dbd080" autoIncrement="false" autoIncrementSequenceName="Employe_adresse_mail_seq" defaultValue="" name="adresse_mail" nullable="0" physicalName="adresse_mail" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -60,7 +60,7 @@
     <column id="COL15" populated="true" UUID="108b3520-e9b2-465f-a2e7-4b50000fda71" autoIncrement="false" autoIncrementSequenceName="Client_sexe_seq" defaultValue="D" name="sexe" nullable="0" physicalName="sexe" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL16" populated="true" UUID="e1bbfef6-5278-4070-9fde-c1406c1e5d18" autoIncrement="false" autoIncrementSequenceName="Client_numero_tel_seq" defaultValue="" name="numero_tel" nullable="0" physicalName="numero_tel" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL16" populated="true" UUID="e1bbfef6-5278-4070-9fde-c1406c1e5d18" autoIncrement="false" autoIncrementSequenceName="Client_numero_tel_seq" defaultValue="" name="numero_tel" nullable="0" physicalName="numero_tel" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL17" populated="true" UUID="c16c621d-0f35-4b94-8da9-0b43b445f6ff" autoIncrement="false" autoIncrementSequenceName="Client_adresse_mail_seq" defaultValue="" name="adresse_mail" nullable="0" physicalName="adresse_mail" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -103,7 +103,7 @@
   <table id="TAB26" populated="true" UUID="b60d30bb-7902-4937-922c-6e4abf9743eb" name="Commande" objectType="TABLE" physicalName="Commande" >
    <remarks></remarks>
    <folder id="FOLTAB261" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL27" populated="true" UUID="92dbb89b-5761-419c-8a43-975cffa4bbc2" autoIncrement="false" autoIncrementSequenceName="Commande_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL27" populated="true" UUID="92dbb89b-5761-419c-8a43-975cffa4bbc2" autoIncrement="true" autoIncrementSequenceName="Commande_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="4" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL28" populated="true" UUID="f9e82748-d729-443a-947f-e5661825d359" autoIncrement="false" autoIncrementSequenceName="Commande_date_livraison_seq" defaultValue="" name="date_livraison" nullable="0" physicalName="date_livraison" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -381,7 +381,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="471" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="805" y="442" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB12" x="944" y="41" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB21" x="410" y="249" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
