@@ -371,7 +371,7 @@ VALUES
 	(10, 'Madame', 'Columbo', 'F','0601088510', 'MadameColumbo@tvBreitz.com')
 ;
 
-INSERT INTO public.adresse_client
+INSERT INTO public.adresses
 	(client_id, numero_rue, code_postal, ville)
 VALUES
 	(1, '3 rue de la connaissance', 31100, 'Toulouse'),

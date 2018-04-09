@@ -1,0 +1,54 @@
+
+--Affiche les nom/prenom des employés d'un pdv--
+SELECT nom, prenom FROM public.employe
+WHERE point_de_vente_id = 1 
+OR point_de_vente_id = 2;
+
+
+--Affiche le stock d'un pdv--
+SELECT ingredient_nom, quantite_kg,  FROM public.stock
+WHERE point_de_vente_id = 1;
+
+
+--Affiche les id commandes et leur prix total ordonnés croissants--
+
+SELECT commande_id, SUM(pizza.prix) AS Prix_commande
+FROM pizza, pizza_dans_commande
+WHERE pizza.nom = pizza_dans_commande.pizza_nom
+GROUP BY pizza_dans_commande.commande_id
+ORDER BY commande_id ASC;
+
+--Affiche le classement des pdv en fonction de leurs ventes--
+
+SELECT point_de_vente_id, SUM(pizza.prix) AS recette_pdv
+FROM pizza, pizza_dans_commande
+WHERE pizza.nom = pizza_dans_commande.pizza_nom
+GROUP BY point_de_vente_id
+ORDER BY recette_pdv DESC;
+
+--Affiche les commandes d'un client --
+
+SELECT pizza_nom FROM public.pizza_dans_commande
+WHERE point_de_vente_id = 3;
+
+--Affiche le nom du livreur pour chaque client ainsi que --
+--l'id du pdv, de la commande et la date de cette derniere--
+
+SELECT commande.point_de_vente_id AS point_de_vente, 
+commande.id AS commande, 
+commande.date_livraison AS date_livraison,
+CONCAT(client.prenom, ' ', client.nom) AS client, 
+CONCAT(employe.prenom, ' ', employe.nom) AS livreur
+FROM client, employe, commande
+WHERE commande.livreur_id = employe.id
+AND commande.client_id = client.id
+AND LOWER(commande.moyen_paiement) = 'en ligne'
+AND LOWER(employe.poste) = 'livreur'
+ORDER BY commande.id ASC;
+
+--Affiche les commandes associées aux clients, leur id, date de livraison, et moyen de paiement--
+
+SELECT commande.id AS commande_id, prenom, nom, date_livraison, moyen_paiement
+FROM client 
+INNER JOIN commande ON client.id = commande.client_id
+ORDER BY date_livraison DESC;
