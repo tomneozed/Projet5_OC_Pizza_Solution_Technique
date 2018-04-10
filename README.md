@@ -1,4 +1,4 @@
-Projet "Concevez la solution technique d’un système de gestion de pizzeria"
+# Projet "Concevez la solution technique d’un système de gestion de pizzeria"
 
 Projet 5 du parcours "Developpeur d'applications java" d'OpenClassrooms
 
